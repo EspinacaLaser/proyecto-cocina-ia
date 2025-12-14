@@ -4,6 +4,10 @@ import RestrictionSelector from "../components/chat/RestrictionSelector";
 import HistoryList from "../components/chat/HistoryList";
 import ResultCard from "../components/chat/ResultCard";
 import { useAssistant } from "../hooks/useAssistant";
+import { parseIngredientsText } from "../services/assistant/parsing/parseIngredients";
+
+
+console.log(parseIngredientsText("200 g pasta, 1/2 cebolla, 2 tbsp aceite, 150 ml leche, 1 pizca comino, 1 lata de atún"));
 
 function Chat() {
   const a = useAssistant();
