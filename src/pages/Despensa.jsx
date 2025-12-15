@@ -28,10 +28,10 @@ function Despensa() {
   }, [q, cat]);
 
   return (
-    <div style={{ display: "grid", gap: "var(--space-8)" }}>
+    <div style={{ display: "grid", gap: "var(--space-12)" }}>
       {/* HERO editorial */}
-      <section className="card" style={{ padding: "var(--space-8)" }}>
-        <div style={{ display: "grid", gap: "var(--space-4)" }}>
+      <section className="card" style={{ padding: "var(--space-12)" }}>
+        <div style={{ display: "grid", gap: "var(--space-6)" }}>
           <h1 style={{ fontSize: "var(--text-2xl)", margin: 0 }}>Despensa</h1>
           <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.7 }}>
             Biblioteca curada (20 ingredientes) con combinaciones y nutrición por 100 g. En futuras fases,
@@ -48,8 +48,8 @@ function Despensa() {
         </div>
 
         {/* filtros */}
-        <div style={{ marginTop: "var(--space-6)", display: "grid", gap: "var(--space-4)" }}>
-          <div className="grid2" style={{ gap: "var(--space-4)" }}>
+        <div style={{ marginTop: "var(--space-8)", display: "grid", gap: "var(--space-6)" }}>
+          <div className="grid2" style={{ gap: "var(--space-6)" }}>
             <div style={{ display: "grid", gap: "var(--space-2)" }}>
               <label style={{ fontWeight: 700, fontSize: "var(--text-sm)" }}>Buscar</label>
               <input
@@ -96,7 +96,7 @@ function Despensa() {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "var(--space-6)",
+          gap: "var(--space-8)",
         }}
       >
         {filtered.map((it) => (

@@ -3,18 +3,18 @@ import filosofiaImg from "../assets/ia/filosofia/img1.png";
 
 function Filosofia() {
   return (
-    <div style={{ display: "grid", gap: "var(--space-8)" }}>
-      <section className="card" style={{ padding: "var(--space-8)" }}>
+    <div style={{ display: "grid", gap: "var(--space-12)" }}>
+      <section className="card" style={{ padding: "var(--space-12)" }}>
         <h1 style={{ fontSize: "var(--text-2xl)", margin: 0 }}>Filosofía</h1>
-        <p style={{ marginTop: "var(--space-3)", color: "var(--muted)", lineHeight: 1.7 }}>
+        <p style={{ marginTop: "var(--space-4)", color: "var(--muted)", lineHeight: 1.7 }}>
           Cocina IA nace para recuperar el lado bello de cocinar: una práctica creativa, sensorial y humana,
           donde la tecnología acompaña sin sustituir el criterio.
         </p>
       </section>
 
-      <section className="grid2" style={{ gap: "var(--space-6)", alignItems: "stretch" }}>
-        <div className="card" style={{ padding: "var(--space-7)", height: "100%" }}>
-          <div style={{ display: "grid", gap: "var(--space-4)", height: "100%" }}>
+      <section className="grid2" style={{ gap: "var(--space-10)", alignItems: "stretch" }}>
+        <div className="card" style={{ padding: "var(--space-10)", height: "100%" }}>
+          <div style={{ display: "grid", gap: "var(--space-6)", height: "100%" }}>
             <div style={{ display: "grid", gap: "var(--space-2)" }}>
               <h2 style={{ fontSize: "var(--text-xl)", margin: 0 }}>IA como asistente, no como piloto</h2>
               <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.7 }}>
@@ -29,15 +29,15 @@ function Filosofia() {
               <li>Coherencia: la receta se construye con intención (base, técnica, acabado).</li>
             </ul>
 
-            <div style={{ marginTop: "auto", display: "flex", gap: "var(--space-3)", flexWrap: "wrap" }}>
+            <div style={{ marginTop: "auto", display: "flex", gap: "var(--space-4)", flexWrap: "wrap" }}>
               <Link className="btn btnPrimary" to="/chat">Ir al asistente</Link>
               <Link className="btn btnGhost" to="/">Volver al inicio</Link>
             </div>
           </div>
         </div>
 
-        <div className="card" style={{ padding: "var(--space-7)", height: "100%" }}>
-          <div style={{ display: "grid", gap: "var(--space-5)", height: "100%" }}>
+        <div className="card" style={{ padding: "var(--space-10)", height: "100%" }}>
+          <div style={{ display: "grid", gap: "var(--space-6)", height: "100%" }}>
             <div style={{ display: "grid", gap: "var(--space-2)" }}>
               <h2 style={{ fontSize: "var(--text-xl)", margin: 0 }}>Estética y cuidado</h2>
               <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.7 }}>

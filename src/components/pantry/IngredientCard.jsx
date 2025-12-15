@@ -18,12 +18,12 @@ function Section({ title, children }) {
   return (
     <div
       style={{
-        paddingTop: "var(--space-5)",
+        paddingTop: "var(--space-6)",
         borderTop: "1px solid var(--border)",
       }}
     >
       {title ? (
-        <strong style={{ display: "block", marginBottom: "var(--space-3)" }}>{title}</strong>
+        <strong style={{ display: "block", marginBottom: "var(--space-4)" }}>{title}</strong>
       ) : null}
       {children}
     </div>
@@ -37,7 +37,7 @@ function IngredientCard({ item }) {
     <article
       className="card"
       style={{
-        padding: "var(--space-6)",
+        padding: "var(--space-8)",
         height: "100%",
         display: "flex",
         flexDirection: "column",
@@ -48,9 +48,9 @@ function IngredientCard({ item }) {
         style={{
           display: "flex",
           justifyContent: "space-between",
-          gap: "var(--space-4)",
+          gap: "var(--space-6)",
           alignItems: "baseline",
-          paddingBottom: "var(--space-4)",
+          paddingBottom: "var(--space-6)",
         }}
       >
         <h3 style={{ fontSize: "var(--text-xl)", margin: 0, lineHeight: 1.15 }}>{item.name}</h3>
@@ -71,7 +71,7 @@ function IngredientCard({ item }) {
 
       {/* NUTRICIÓN */}
       <Section title="Nutrición (por 100 g)">
-        <div style={{ display: "grid", gap: "0.6rem", fontSize: "var(--text-sm)" }}>
+        <div style={{ display: "grid", gap: "var(--space-2)", fontSize: "var(--text-sm)" }}>
           <Row label="Kcal" value={fmt(n.kcal)} />
           <Row label="Proteína (g)" value={fmt(n.protein_g)} />
           <Row label="Carbohidratos (g)" value={fmt(n.carbs_g)} />
