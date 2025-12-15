@@ -17,24 +17,6 @@ function Home() {
             criterio humano y respuestas estructuradas para transformar ingredientes reales
             en una receta clara.
           </p>
-
-          <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap" }}>
-            <Link to="/chat" className="btn btnPrimary">
-              Abrir el asistente
-            </Link>
-            <Link to="/despensa" className="btn btnGhost">
-              Ver la despensa
-            </Link>
-            <a href="#como-funciona" className="btn btnGhost">
-              Ver cómo funciona
-            </a>
-          </div>
-
-          <div style={{ display: "flex", gap: "var(--space-2)", flexWrap: "wrap" }}>
-            <span className="badge">Sin base de datos</span>
-            <span className="badge">Prototipo navegable</span>
-            <span className="badge">IA como apoyo creativo</span>
-          </div>
         </div>
       </section>
 
@@ -50,11 +32,6 @@ function Home() {
               título, ingredientes, pasos y notas de cocina. Menos ruido, más claridad.
             </p>
 
-            <div style={{ marginTop: "var(--space-4)", display: "flex", gap: "var(--space-2)", flexWrap: "wrap" }}>
-              <span className="badge">Entradas guiadas</span>
-              <span className="badge">Receta estructurada</span>
-            </div>
-
             <div style={{ marginTop: "var(--space-5)" }}>
               <Link to="/chat" className="btn btnPrimary">
                 Probar el asistente
@@ -69,12 +46,6 @@ function Home() {
               valores nutricionales por 100 g. Pensada como base para una futura base de datos
               y endpoints.
             </p>
-
-            <div style={{ marginTop: "var(--space-4)", display: "flex", gap: "var(--space-2)", flexWrap: "wrap" }}>
-              <span className="badge">Biblioteca</span>
-              <span className="badge">Inspiración</span>
-              <span className="badge">Nutrición</span>
-            </div>
 
             <div style={{ marginTop: "var(--space-5)" }}>
               <Link to="/despensa" className="btn btnGhost">
@@ -95,12 +66,6 @@ function Home() {
               pero las decisiones se toman de forma humana. El foco está en diseñar prompts, iterar,
               revisar resultados y documentar el proceso.
             </p>
-
-            <div style={{ display: "flex", gap: "var(--space-2)", flexWrap: "wrap" }}>
-              <span className="badge">Transparencia</span>
-              <span className="badge">Revisión humana</span>
-              <span className="badge">Uso intencionado</span>
-            </div>
 
             <div style={{ marginTop: "var(--space-4)", display: "flex", gap: "var(--space-3)", flexWrap: "wrap" }}>
               <Link to="/filosofia" className="btn btnGhost">

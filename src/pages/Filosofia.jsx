@@ -32,24 +32,9 @@ function Filosofia() {
             Próximamente añadiremos recursos visuales generados con IA para reforzar la atmósfera culinaria.
           </p>
 
-          <div style={{ marginTop: "var(--space-4)", display: "grid", gap: "var(--space-3)" }}>
-            <div className="card" style={{ padding: "var(--space-4)" }}>
-              <strong>Imágenes (pendiente)</strong>
-              <p style={{ marginTop: "var(--space-2)", color: "var(--muted)" }}>
-                Aquí podrás colocar imágenes generadas: ingredientes, bodegones, escenas de cocina, etc.
-              </p>
-            </div>
-            <div className="card" style={{ padding: "var(--space-4)" }}>
-              <strong>Proceso (pendiente)</strong>
-              <p style={{ marginTop: "var(--space-2)", color: "var(--muted)" }}>
-                Capturas de iteración, prompts y decisiones para la memoria del proyecto.
-              </p>
-            </div>
-          </div>
-
           <div style={{ marginTop: "var(--space-5)", display: "flex", gap: "var(--space-3)", flexWrap: "wrap" }}>
             <Link className="btn btnPrimary" to="/chat">Ir al asistente</Link>
-            <Link className="btn btnGhost" to="/explorar">Ver inspiración</Link>
+            <Link className="btn btnGhost" to="/#">Volver al inicio</Link>
           </div>
         </div>
       </section>
