@@ -53,3 +53,36 @@ hr {
 @media (max-width: 640px) {
   .container { padding: var(--space-6) var(--space-4); }
 }
+
+.tag{
+  display:inline-flex;
+  align-items:center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border: 1px solid var(--border);
+}
+
+.tagGood{
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.tagBad{
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+.tagNeutral{
+  background: rgba(59, 130, 246, 0.10);
+  border-color: rgba(59, 130, 246, 0.30);
+}
+/* Layout helper: espacio vertical consistente entre hijos */
+.stack > * + * {
+  margin-top: var(--space-4);
+}
+
+.stack-lg > * + * {
+  margin-top: var(--space-5);
+}
