@@ -2,9 +2,9 @@ import PopularDishesSlider from "./PopularDishesSlider";
 
 function ChatHero() {
   return (
-    <section className="card" style={{ padding: "var(--space-8)" }}>
-      <div style={{ display: "grid", gap: "var(--space-4)" }}>
-        <div style={{ display: "grid", gap: "var(--space-2)" }}>
+    <section className="card" style={{ padding: "var(--space-10)" }}>
+      <div style={{ display: "grid", gap: "var(--space-6)" }}>
+        <div style={{ display: "grid", gap: "var(--space-3)" }}>
           <span className="badge">Platos destacados</span>
           <h2 style={{ fontSize: "var(--text-2xl)", margin: 0 }}>Ideas populares para inspirarte</h2>
           <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.7 }}>

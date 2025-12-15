@@ -1,6 +1,6 @@
 function HistoryList({ items, onSelect, onClear }) {
   return (
-    <div style={{ display: "grid", gap: "var(--space-3)" }}>
+    <div style={{ display: "grid", gap: "var(--space-4)" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
         <h3 style={{ fontSize: "var(--text-lg)" }}>Historial</h3>
         <button className="btn btnGhost" type="button" onClick={onClear}>
@@ -11,7 +11,7 @@ function HistoryList({ items, onSelect, onClear }) {
       {items.length === 0 ? (
         <p>No hay generaciones todavía.</p>
       ) : (
-        <div style={{ display: "grid", gap: "var(--space-2)" }}>
+        <div style={{ display: "grid", gap: "var(--space-3)" }}>
           {items.map((item) => (
             <button
               key={item.id}

@@ -44,7 +44,7 @@ function PopularDishesSlider() {
     <div
       className="card"
       style={{
-        padding: "var(--space-4)",
+        padding: "var(--space-6)",
         overflow: "hidden",
         borderRadius: "var(--radius-lg)",
       }}

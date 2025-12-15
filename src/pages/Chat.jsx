@@ -8,17 +8,17 @@ function Chat() {
   const a = useAssistant();
 
   return (
-    <div style={{ display: "grid", gap: "var(--space-8)" }}>
+    <div style={{ display: "grid", gap: "var(--space-12)" }}>
       <ChatHero />
 
-      <section className="card" style={{ padding: "var(--space-8)" }}>
-        <div className="reading" style={{ display: "grid", gap: "var(--space-3)" }}>
+      <section className="card" style={{ padding: "var(--space-12)" }}>
+        <div className="reading" style={{ display: "grid", gap: "var(--space-4)" }}>
           <h1 style={{ fontSize: "var(--text-2xl)", margin: 0 }}>Asistente culinario</h1>
           <p style={{ fontSize: "var(--text-md)", margin: 0, color: "var(--muted)", lineHeight: 1.7 }}>
             Prototipo híbrido: entradas guiadas + motor culinario con reglas y plantillas.
             Control humano, coherencia y límites explícitos.
           </p>
-          <div style={{ display: "flex", gap: "var(--space-2)", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap" }}>
             <span className="badge">Sin base de datos</span>
             <span className="badge">Respuestas estructuradas</span>
             <span className="badge">Escalable</span>
@@ -26,9 +26,9 @@ function Chat() {
         </div>
       </section>
 
-      <section className="grid2" style={{ gap: "var(--space-6)", alignItems: "start" }}>
-        <div className="card" style={{ padding: "var(--space-7)" }}>
-          <div style={{ display: "grid", gap: "var(--space-4)" }}>
+      <section className="grid2" style={{ gap: "var(--space-10)", alignItems: "start" }}>
+        <div className="card" style={{ padding: "var(--space-10)" }}>
+          <div style={{ display: "grid", gap: "var(--space-6)" }}>
             <div style={{ display: "grid", gap: "var(--space-2)" }}>
               <h2 style={{ fontSize: "var(--text-xl)", margin: 0 }}>Parámetros</h2>
               <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.6 }}>
@@ -36,7 +36,7 @@ function Chat() {
               </p>
             </div>
 
-            <div style={{ display: "grid", gap: "var(--space-4)" }}>
+            <div style={{ display: "grid", gap: "var(--space-6)" }}>
               <div style={{ display: "grid", gap: "var(--space-2)" }}>
                 <label style={{ fontWeight: 700, fontSize: "var(--text-sm)" }}>
                   Ingredientes <span style={{ color: "var(--muted)", fontWeight: 600 }}>(obligatorio)</span>
@@ -58,7 +58,7 @@ function Chat() {
                 </p>
               </div>
 
-              <div className="grid2" style={{ gap: "var(--space-4)" }}>
+              <div className="grid2" style={{ gap: "var(--space-6)" }}>
                 <div style={{ display: "grid", gap: "var(--space-2)" }}>
                   <label style={{ fontWeight: 700, fontSize: "var(--text-sm)" }}>Tiempo</label>
                   <select
@@ -104,7 +104,7 @@ function Chat() {
               </div>
             </div>
 
-            <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: "var(--space-4)", flexWrap: "wrap" }}>
               <button
                 className="btn btnPrimary"
                 type="button"
@@ -126,15 +126,15 @@ function Chat() {
           </div>
         </div>
 
-        <div className="card" style={{ padding: "var(--space-7)" }}>
-          <div style={{ display: "grid", gap: "var(--space-3)" }}>
+        <div className="card" style={{ padding: "var(--space-10)" }}>
+          <div style={{ display: "grid", gap: "var(--space-4)" }}>
             <h2 style={{ fontSize: "var(--text-xl)", margin: 0 }}>Resultado</h2>
             <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.6 }}>
               Receta estructurada que varía según ingredientes, tiempo y porciones.
             </p>
           </div>
 
-          <div style={{ marginTop: "var(--space-6)" }}>
+          <div style={{ marginTop: "var(--space-8)" }}>
             <ResultCard result={a.result} />
           </div>
         </div>
