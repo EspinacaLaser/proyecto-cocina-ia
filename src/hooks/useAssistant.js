@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
-import { generateSuggestion } from "../services/chatEngine";
+import { generateSuggestion } from "../services/assistant";
 
-const STORAGE_KEY = "cocinaIA_history_v2";
+const STORAGE_KEY = "cocinaIA_history_v3";
 
 function loadHistory() {
   try {
@@ -23,10 +23,9 @@ function saveHistory(items) {
 }
 
 export function useAssistant() {
-  const [mode, setMode] = useState("recipe");
   const [ingredientsText, setIngredientsText] = useState("");
-  const [time, setTime] = useState("15");
-  const [restrictions, setRestrictions] = useState([]);
+  const [time, setTime] = useState("20");
+  const [servings, setServings] = useState("2");
 
   const [history, setHistory] = useState(() => loadHistory());
   const [result, setResult] = useState(() => history?.[0] ?? null);
@@ -36,22 +35,14 @@ export function useAssistant() {
   }, [history, result]);
 
   const isGenerateDisabled = useMemo(() => {
-    if (mode === "substitute") return ingredientsText.trim().length === 0;
-    return false;
-  }, [mode, ingredientsText]);
-
-  function toggleRestriction(value) {
-    setRestrictions((prev) =>
-      prev.includes(value) ? prev.filter((x) => x !== value) : [...prev, value]
-    );
-  }
+    return ingredientsText.trim().length === 0;
+  }, [ingredientsText]);
 
   function generate() {
     const payload = {
-      mode,
       ingredientsText,
       time: Number(time),
-      restrictions,
+      servings: Number(servings),
     };
 
     const suggestion = generateSuggestion(payload);
@@ -67,10 +58,9 @@ export function useAssistant() {
   }
 
   function reset() {
-    setMode("recipe");
     setIngredientsText("");
-    setTime("15");
-    setRestrictions([]);
+    setTime("20");
+    setServings("2");
     setResult(null);
   }
 
@@ -81,14 +71,12 @@ export function useAssistant() {
   }
 
   return {
-    mode,
-    setMode,
     ingredientsText,
     setIngredientsText,
     time,
     setTime,
-    restrictions,
-    toggleRestriction,
+    servings,
+    setServings,
     history,
     result,
     isGenerateDisabled,

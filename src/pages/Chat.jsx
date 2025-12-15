@@ -1,13 +1,7 @@
 import { Link } from "react-router-dom";
-import ModeSelector from "../components/chat/ModeSelector";
-import RestrictionSelector from "../components/chat/RestrictionSelector";
 import HistoryList from "../components/chat/HistoryList";
 import ResultCard from "../components/chat/ResultCard";
 import { useAssistant } from "../hooks/useAssistant";
-import { parseIngredientsText } from "../services/assistant/parsing/parseIngredients";
-
-
-console.log(parseIngredientsText("200 g pasta, 1/2 cebolla, 2 tbsp aceite, 150 ml leche, 1 pizca comino, 1 lata de atún"));
 
 function Chat() {
   const a = useAssistant();
@@ -24,7 +18,7 @@ function Chat() {
           <div style={{ display: "flex", gap: "var(--space-2)", flexWrap: "wrap" }}>
             <span className="badge">Sin base de datos</span>
             <span className="badge">Respuestas estructuradas</span>
-            <span className="badge">Coherencia visual</span>
+            <span className="badge">Escalable</span>
           </div>
         </div>
       </section>
@@ -33,22 +27,18 @@ function Chat() {
         <div className="card" style={{ padding: "var(--space-6)" }}>
           <h2 style={{ fontSize: "var(--text-xl)" }}>Parámetros</h2>
           <p style={{ marginTop: "var(--space-2)" }}>
-            Evitamos prompts genéricos: el sistema responde a criterios concretos.
+            Escribe ingredientes (mejor si incluyes cantidades) y ajusta tiempo/porciones.
           </p>
 
           <div style={{ marginTop: "var(--space-6)", display: "grid", gap: "var(--space-6)" }}>
-            <ModeSelector value={a.mode} onChange={a.setMode} />
-
             <div style={{ display: "grid", gap: "var(--space-2)" }}>
               <label style={{ fontWeight: 700, fontSize: "var(--text-sm)" }}>
-                Ingredientes <span style={{ color: "var(--muted)", fontWeight: 600 }}>
-                  {a.mode === "substitute" ? "(obligatorio)" : "(opcional)"}
-                </span>
+                Ingredientes <span style={{ color: "var(--muted)", fontWeight: 600 }}>(obligatorio)</span>
               </label>
               <input
                 value={a.ingredientsText}
                 onChange={(e) => a.setIngredientsText(e.target.value)}
-                placeholder="Ej. tomate, pasta, ajo"
+                placeholder="Ej. 200 g pasta, 1/2 cebolla, 2 cdas aceite, tomate"
                 style={{
                   padding: "var(--space-3)",
                   borderRadius: "var(--radius-md)",
@@ -57,34 +47,55 @@ function Chat() {
                   background: "white",
                 }}
               />
-              <div style={{ display: "flex", gap: "var(--space-2)", flexWrap: "wrap" }}>
-                <span className="badge">despensa</span>
-                <span className="badge">estacional</span>
-                <span className="badge">simple</span>
+              <p style={{ marginTop: "var(--space-1)", color: "var(--muted)", fontSize: "var(--text-sm)" }}>
+                Consejo: añade cantidades y unidades para resultados más precisos.
+              </p>
+            </div>
+
+            <div className="grid2" style={{ gap: "var(--space-4)" }}>
+              <div style={{ display: "grid", gap: "var(--space-2)" }}>
+                <label style={{ fontWeight: 700, fontSize: "var(--text-sm)" }}>Tiempo</label>
+                <select
+                  value={a.time}
+                  onChange={(e) => a.setTime(e.target.value)}
+                  style={{
+                    padding: "var(--space-3)",
+                    borderRadius: "var(--radius-md)",
+                    border: "1px solid var(--border)",
+                    fontSize: "var(--text-md)",
+                    background: "white",
+                  }}
+                >
+                  <option value="10">10 min</option>
+                  <option value="15">15 min</option>
+                  <option value="20">20 min</option>
+                  <option value="30">30 min</option>
+                  <option value="45">45 min</option>
+                </select>
+              </div>
+
+              <div style={{ display: "grid", gap: "var(--space-2)" }}>
+                <label style={{ fontWeight: 700, fontSize: "var(--text-sm)" }}>Porciones</label>
+                <select
+                  value={a.servings}
+                  onChange={(e) => a.setServings(e.target.value)}
+                  style={{
+                    padding: "var(--space-3)",
+                    borderRadius: "var(--radius-md)",
+                    border: "1px solid var(--border)",
+                    fontSize: "var(--text-md)",
+                    background: "white",
+                  }}
+                >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
               </div>
             </div>
-
-            <div style={{ display: "grid", gap: "var(--space-2)" }}>
-              <label style={{ fontWeight: 700, fontSize: "var(--text-sm)" }}>Tiempo</label>
-              <select
-                value={a.time}
-                onChange={(e) => a.setTime(e.target.value)}
-                style={{
-                  padding: "var(--space-3)",
-                  borderRadius: "var(--radius-md)",
-                  border: "1px solid var(--border)",
-                  fontSize: "var(--text-md)",
-                  background: "white",
-                }}
-              >
-                <option value="10">10 min</option>
-                <option value="15">15 min</option>
-                <option value="30">30 min</option>
-                <option value="45">45 min</option>
-              </select>
-            </div>
-
-            <RestrictionSelector values={a.restrictions} onToggle={a.toggleRestriction} />
 
             <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap" }}>
               <button
@@ -94,7 +105,7 @@ function Chat() {
                 disabled={a.isGenerateDisabled}
                 style={a.isGenerateDisabled ? { opacity: 0.6, cursor: "not-allowed" } : undefined}
               >
-                Generar propuesta
+                Generar receta
               </button>
               <button className="btn btnGhost" type="button" onClick={a.reset}>
                 Reiniciar
@@ -111,7 +122,7 @@ function Chat() {
         <div className="card" style={{ padding: "var(--space-6)" }}>
           <h2 style={{ fontSize: "var(--text-xl)" }}>Resultado</h2>
           <p style={{ marginTop: "var(--space-2)" }}>
-            Propuesta estructurada con variabilidad real según ingredientes, tiempo y restricciones.
+            Receta estructurada que varía según ingredientes, tiempo y porciones.
           </p>
           <div style={{ marginTop: "var(--space-6)" }}>
             <ResultCard result={a.result} />
