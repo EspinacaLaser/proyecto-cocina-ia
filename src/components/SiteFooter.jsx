@@ -4,6 +4,7 @@ function SiteFooter() {
       <div
         className="card"
         style={{
+          width: "100%",
           padding: "var(--space-4)",
           display: "flex",
           gap: "var(--space-4)",

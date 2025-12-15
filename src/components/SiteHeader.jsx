@@ -14,6 +14,7 @@ function SiteHeader() {
       <div
         className="card"
         style={{
+          width: "100%",
           padding: "var(--space-4)",
           display: "flex",
           justifyContent: "space-between",
@@ -28,17 +29,32 @@ function SiteHeader() {
             fontFamily: "var(--font-serif)",
             fontSize: "var(--text-xl)",
             letterSpacing: "0.2px",
+            whiteSpace: "nowrap",
           }}
         >
           Cocina IA
         </Link>
 
-        <nav style={{ display: "flex", gap: "var(--space-4)", flexWrap: "wrap" }}>
+        <nav
+          style={{
+            display: "flex",
+            gap: "var(--space-4)",
+            flexWrap: "wrap",
+            alignItems: "center",
+            justifyContent: "flex-end",
+          }}
+        >
           <NavLink to="/" end style={linkStyle}>
             Inicio
           </NavLink>
           <NavLink to="/chat" style={linkStyle}>
             Asistente
+          </NavLink>
+          <NavLink to="/filosofia" style={linkStyle}>
+            Filosofía
+          </NavLink>
+          <NavLink to="/explorar" style={linkStyle}>
+            Explorar
           </NavLink>
         </nav>
       </div>

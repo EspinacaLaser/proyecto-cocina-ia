@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Chat from "./pages/Chat";
+import Filosofia from "./pages/Filosofia";
+import Explorar from "./pages/Explorar";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 
@@ -13,6 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/chat" element={<Chat />} />
+          <Route path="/filosofia" element={<Filosofia />} />
+          <Route path="/explorar" element={<Explorar />} />
         </Routes>
       </main>
 
