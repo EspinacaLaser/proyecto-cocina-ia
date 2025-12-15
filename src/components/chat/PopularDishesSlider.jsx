@@ -16,9 +16,9 @@ function PopularDishesSlider() {
     () => [
       { src: img1, title: "Pasta mediterránea" },
       { src: img2, title: "Guiso reconfortante" },
-      { src: img3, title: "Bowl vegetal" },
-      { src: img4, title: "Salteado rápido" },
-      { src: img5, title: "Ensalada templada" },
+      { src: img3, title: "Ternera con verduras" },
+      { src: img4, title: "Salteado vegetal asiático" },
+      { src: img5, title: "Estofado español" },
     ],
     []
   );
