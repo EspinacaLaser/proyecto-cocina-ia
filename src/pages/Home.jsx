@@ -13,14 +13,17 @@ function Home() {
           </h1>
 
           <p style={{ fontSize: "var(--text-lg)" }}>
-            Un asistente culinario que te acompaña con sugerencias claras y estéticas:
-            recetas con lo que tienes, sustituciones inteligentes y reinterpretaciones con
-            intención.
+            Un prototipo culinario donde la “inteligencia” se diseña: entradas guiadas,
+            criterio humano y respuestas estructuradas para transformar ingredientes reales
+            en una receta clara.
           </p>
 
           <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap" }}>
             <Link to="/chat" className="btn btnPrimary">
               Abrir el asistente
+            </Link>
+            <Link to="/despensa" className="btn btnGhost">
+              Ver la despensa
             </Link>
             <a href="#como-funciona" className="btn btnGhost">
               Ver cómo funciona
@@ -35,75 +38,90 @@ function Home() {
         </div>
       </section>
 
-      {/* CAPACIDADES */}
+      {/* QUÉ PUEDES HACER */}
       <section id="como-funciona" style={{ display: "grid", gap: "var(--space-4)" }}>
         <h2 style={{ fontSize: "var(--text-2xl)" }}>Qué puedes hacer aquí</h2>
 
-        <div className="grid3">
+        <div className="grid2">
           <div className="card" style={{ padding: "var(--space-6)" }}>
-            <h3 style={{ fontSize: "var(--text-xl)" }}>Cocina con lo que tienes</h3>
+            <h3 style={{ fontSize: "var(--text-xl)" }}>Generar una receta con lo que tienes</h3>
             <p style={{ marginTop: "var(--space-2)" }}>
-              Indica ingredientes y tiempo disponible. Obtendrás una receta clara, con pasos
-              y una propuesta cuidada.
+              Indica ingredientes, tiempo y porciones. Obtendrás una propuesta estructurada:
+              título, ingredientes, pasos y notas de cocina. Menos ruido, más claridad.
             </p>
-            <div style={{ marginTop: "var(--space-4)" }}>
-              <span className="badge">Modo guiado</span>
-            </div>
-          </div>
 
-          <div className="card" style={{ padding: "var(--space-6)" }}>
-            <h3 style={{ fontSize: "var(--text-xl)" }}>Sustituciones inteligentes</h3>
-            <p style={{ marginTop: "var(--space-2)" }}>
-              ¿Falta un ingrediente? Te proponemos alternativas razonables según textura,
-              sabor y función culinaria.
-            </p>
             <div style={{ marginTop: "var(--space-4)", display: "flex", gap: "var(--space-2)", flexWrap: "wrap" }}>
-              <span className="badge">Alergias</span>
-              <span className="badge">Despensa</span>
+              <span className="badge">Entradas guiadas</span>
+              <span className="badge">Receta estructurada</span>
+            </div>
+
+            <div style={{ marginTop: "var(--space-5)" }}>
+              <Link to="/chat" className="btn btnPrimary">
+                Probar el asistente
+              </Link>
             </div>
           </div>
 
           <div className="card" style={{ padding: "var(--space-6)" }}>
-            <h3 style={{ fontSize: "var(--text-xl)" }}>Reinterpretación creativa</h3>
+            <h3 style={{ fontSize: "var(--text-xl)" }}>Consultar la Despensa</h3>
             <p style={{ marginTop: "var(--space-2)" }}>
-              Convierte una idea en una versión mediterránea, vegetal o más ligera, sin
-              perder el espíritu del plato.
+              Una biblioteca curada de ingredientes (muestra inicial) con combinaciones y
+              valores nutricionales por 100 g. Pensada como base para una futura base de datos
+              y endpoints.
             </p>
-            <div style={{ marginTop: "var(--space-4)" }}>
-              <span className="badge" style={{ color: "var(--accent-2)" }}>
-                Creatividad
-              </span>
+
+            <div style={{ marginTop: "var(--space-4)", display: "flex", gap: "var(--space-2)", flexWrap: "wrap" }}>
+              <span className="badge">Biblioteca</span>
+              <span className="badge">Inspiración</span>
+              <span className="badge">Nutrición</span>
+            </div>
+
+            <div style={{ marginTop: "var(--space-5)" }}>
+              <Link to="/despensa" className="btn btnGhost">
+                Abrir Despensa
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* EDITORIAL */}
+      {/* EDITORIAL / ÉTICA */}
       <section className="card" style={{ padding: "var(--space-8)" }}>
         <div className="grid2">
           <div style={{ display: "grid", gap: "var(--space-3)" }}>
             <h2 style={{ fontSize: "var(--text-2xl)" }}>IA, pero con criterio</h2>
-            <p>
-              Este proyecto entiende la IA como asistente. Las decisiones creativas se
-              toman de forma humana, documentando prompts, iteraciones y correcciones para
-              mantener control y coherencia.
+            <p style={{ margin: 0 }}>
+              Este proyecto entiende la IA como asistente: apoya la creación de contenidos y la exploración,
+              pero las decisiones se toman de forma humana. El foco está en diseñar prompts, iterar,
+              revisar resultados y documentar el proceso.
             </p>
+
             <div style={{ display: "flex", gap: "var(--space-2)", flexWrap: "wrap" }}>
               <span className="badge">Transparencia</span>
               <span className="badge">Revisión humana</span>
-              <span className="badge">Coherencia visual</span>
+              <span className="badge">Uso intencionado</span>
+            </div>
+
+            <div style={{ marginTop: "var(--space-4)", display: "flex", gap: "var(--space-3)", flexWrap: "wrap" }}>
+              <Link to="/filosofia" className="btn btnGhost">
+                Leer la filosofía
+              </Link>
             </div>
           </div>
 
           <div className="card" style={{ padding: "var(--space-6)", boxShadow: "none" }}>
-            <h3 style={{ fontSize: "var(--text-xl)" }}>Lo que verás en el asistente</h3>
+            <h3 style={{ fontSize: "var(--text-xl)" }}>Qué verás en el asistente</h3>
             <p style={{ marginTop: "var(--space-2)" }}>
-              Respuestas estructuradas: título, ingredientes, pasos, tiempo estimado y una
-              recomendación final. Menos ruido, más cocina.
+              Respuestas estructuradas y consistentes. El objetivo es que cualquier resultado sea legible,
+              ejecutable y estéticamente claro, incluso siendo un prototipo.
             </p>
-            <div style={{ marginTop: "var(--space-4)" }}>
+
+            <div style={{ marginTop: "var(--space-4)", display: "flex", gap: "var(--space-3)", flexWrap: "wrap" }}>
               <Link to="/chat" className="btn btnPrimary">
                 Probar ahora
+              </Link>
+              <Link to="/despensa" className="btn btnGhost">
+                Inspirarme con ingredientes
               </Link>
             </div>
           </div>
