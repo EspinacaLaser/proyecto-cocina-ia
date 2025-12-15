@@ -11,7 +11,7 @@ La IA no se utiliza como autora ni como sistema autónomo, sino como **asistente
 ## Demo (GitHub Pages)
 
 Prototipo desplegado en GitHub Pages:  
-👉 https://TU_USUARIO.github.io/proyecto-cocina-ia/
+👉 https://EspinacaLaser.github.io/proyecto-cocina-ia/
 
 > **Nota**  
 > El proyecto está configurado como una **SPA (Single Page Application)**.  
