@@ -1,86 +1,56 @@
 function ResultCard({ result }) {
   if (!result) {
     return (
-      <div className="card" style={{ padding: "var(--space-6)", boxShadow: "none" }}>
-        <h3 style={{ fontSize: "var(--text-xl)" }}>Sin resultado todavía</h3>
-        <p style={{ marginTop: "var(--space-2)" }}>
-          Selecciona parámetros y pulsa <strong>Generar propuesta</strong>.
+      <div className="card" style={{ padding: "var(--space-6)" }}>
+        <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.7 }}>
+          Aún no hay resultados. Introduce ingredientes y pulsa “Generar receta”.
         </p>
       </div>
     );
   }
 
   return (
-    <div className="card" style={{ overflow: "hidden", boxShadow: "none" }}>
-      <div style={{ borderBottom: "1px solid var(--border)" }}>
-        <img
-          src={result.image?.imageUrl}
-          alt={result.image?.alt || "Imagen asociada"}
-          style={{ width: "100%", height: "220px", objectFit: "cover" }}
-        />
-      </div>
+    <article className="card" style={{ padding: "var(--space-6)" }}>
+      <div style={{ display: "grid", gap: "var(--space-4)" }}>
+        <h3 style={{ margin: 0, fontSize: "var(--text-xl)" }}>{result.title}</h3>
 
-      <div style={{ padding: "var(--space-6)", display: "grid", gap: "var(--space-4)" }}>
-        <div style={{ display: "grid", gap: "var(--space-2)" }}>
-          <h3 style={{ fontSize: "var(--text-2xl)" }}>{result.title}</h3>
-          <div style={{ display: "flex", gap: "var(--space-2)", flexWrap: "wrap" }}>
-            {result.tags?.map((t) => (
-              <span key={t} className="badge">
-                {t}
-              </span>
+        <section>
+          <strong style={{ display: "block", marginBottom: "var(--space-2)" }}>Ingredientes</strong>
+          <ul style={{ margin: 0, paddingLeft: "1.1rem", display: "grid", gap: "0.35rem", lineHeight: 1.6 }}>
+            {(result.ingredients || []).map((it, idx) => (
+              <li key={idx}>{typeof it === "string" ? it : it?.text ?? JSON.stringify(it)}</li>
             ))}
-          </div>
-        </div>
+          </ul>
+        </section>
 
-        {Array.isArray(result.warnings) && result.warnings.length > 0 && (
-          <div className="card" style={{ padding: "var(--space-4)", boxShadow: "none" }}>
-            <h4 style={{ fontFamily: "var(--font-serif)", margin: 0 }}>Avisos</h4>
-            <ul style={{ margin: "var(--space-3) 0 0", paddingLeft: "1.2rem" }}>
-              {result.warnings.map((w, idx) => (
-                <li key={idx} style={{ color: "var(--muted)" }}>
-                  {w}
-                </li>
-              ))}
+        <section>
+          <strong style={{ display: "block", marginBottom: "var(--space-2)" }}>Pasos</strong>
+          <ol style={{ margin: 0, paddingLeft: "1.1rem", display: "grid", gap: "0.5rem", lineHeight: 1.6 }}>
+            {(result.steps || []).map((s, idx) => (
+              <li key={idx}>{s}</li>
+            ))}
+          </ol>
+        </section>
+
+        {(result.notes && result.notes.length > 0) ? (
+          <section>
+            <strong style={{ display: "block", marginBottom: "var(--space-2)" }}>Notas</strong>
+            <ul style={{ margin: 0, paddingLeft: "1.1rem", display: "grid", gap: "0.35rem", lineHeight: 1.6 }}>
+              {result.notes.map((n, idx) => <li key={idx}>{n}</li>)}
             </ul>
-          </div>
-        )}
+          </section>
+        ) : null}
 
-        {Array.isArray(result.ingredients) && result.ingredients.length > 0 && (
-          <div className="card" style={{ padding: "var(--space-4)", boxShadow: "none" }}>
-            <h4 style={{ fontFamily: "var(--font-serif)", margin: 0 }}>Ingredientes</h4>
-            <ul style={{ margin: "var(--space-3) 0 0", paddingLeft: "1.2rem" }}>
-              {result.ingredients.map((ing) => (
-                <li key={ing} style={{ color: "var(--muted)" }}>
-                  {ing}
-                </li>
-              ))}
+        {(result.warnings && result.warnings.length > 0) ? (
+          <section>
+            <strong style={{ display: "block", marginBottom: "var(--space-2)" }}>Avisos</strong>
+            <ul style={{ margin: 0, paddingLeft: "1.1rem", display: "grid", gap: "0.35rem", lineHeight: 1.6 }}>
+              {result.warnings.map((w, idx) => <li key={idx}>{w}</li>)}
             </ul>
-          </div>
-        )}
-
-        {Array.isArray(result.steps) && result.steps.length > 0 && (
-          <div className="card" style={{ padding: "var(--space-4)", boxShadow: "none" }}>
-            <h4 style={{ fontFamily: "var(--font-serif)", margin: 0 }}>Pasos</h4>
-            <ol style={{ margin: "var(--space-3) 0 0", paddingLeft: "1.2rem" }}>
-              {result.steps.map((s, idx) => (
-                <li key={idx} style={{ color: "var(--muted)", marginBottom: "0.4rem" }}>
-                  {s}
-                </li>
-              ))}
-            </ol>
-          </div>
-        )}
-
-        {result.notes && (
-          <div style={{ display: "grid", gap: "var(--space-2)" }}>
-            <span className="badge" style={{ width: "fit-content" }}>
-              Nota del asistente
-            </span>
-            <p style={{ color: "var(--muted)" }}>{result.notes}</p>
-          </div>
-        )}
+          </section>
+        ) : null}
       </div>
-    </div>
+    </article>
   );
 }
 

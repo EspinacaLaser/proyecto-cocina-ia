@@ -77,7 +77,6 @@ export function generateSuggestion(params) {
     steps: formatted.steps,
     notes: formatted.notes,
     warnings: formatted.warnings,
-    image: null,
     createdAt: new Date().toISOString(),
   };
 }
