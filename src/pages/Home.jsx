@@ -5,11 +5,11 @@ import familyVertical from "../assets/ia/home/img7.png";
 
 function Home() {
   return (
-    <div style={{ display: "grid", gap: "var(--space-10)" }}>
+    <div style={{ display: "grid", gap: "var(--space-12)" }}>
       {/* HERO */}
-      <section className="card" style={{ padding: "var(--space-10)" }}>
-        <div className="grid2" style={{ alignItems: "center", gap: "var(--space-8)" }}>
-          <div className="reading" style={{ display: "grid", gap: "var(--space-4)" }}>
+      <section className="card" style={{ padding: "var(--space-12)" }}>
+        <div className="grid2" style={{ alignItems: "center", gap: "var(--space-10)" }}>
+          <div className="reading" style={{ display: "grid", gap: "var(--space-5)" }}>
             <span className="badge">Cocina lenta · Diseño consciente</span>
 
             <h1 style={{ fontSize: "var(--text-3xl)", margin: 0 }}>
@@ -27,7 +27,7 @@ function Home() {
               Recuperas el gusto por crear, por jugar, por habitar la cocina como un lugar propio.
             </p>
 
-            <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap", marginTop: "var(--space-2)" }}>
+            <div style={{ display: "flex", gap: "var(--space-4)", flexWrap: "wrap", marginTop: "var(--space-3)" }}>
               <Link to="/chat" className="btn btnPrimary">
                 Abrir el asistente
               </Link>
@@ -41,12 +41,12 @@ function Home() {
           </div>
 
           {/* Bloque visual */}
-          <div style={{ display: "grid", gap: "var(--space-4)" }}>
+          <div style={{ display: "grid", gap: "var(--space-5)" }}>
             <div className="card" style={{ padding: 0, overflow: "hidden", borderRadius: "var(--radius-lg)" }}>
               <img
                 src={heroWide}
                 alt="Persona cocinando mientras consulta un asistente en una tablet"
-                style={{ width: "100%", height: 220, objectFit: "cover", display: "block" }}
+                style={{ width: "100%", height: 240, objectFit: "cover", display: "block" }}
               />
             </div>
 
@@ -63,7 +63,7 @@ function Home() {
               <img
                 src={familyVertical}
                 alt="Familia comiendo en la mesa"
-                style={{ width: "100%", height: 260, objectFit: "cover", display: "block" }}
+                style={{ width: "100%", height: 280, objectFit: "cover", display: "block" }}
               />
             </div>
           </div>
@@ -71,12 +71,12 @@ function Home() {
       </section>
 
       {/* QUÉ PUEDES HACER */}
-      <section id="como-funciona" style={{ display: "grid", gap: "var(--space-5)" }}>
+      <section id="como-funciona" style={{ display: "grid", gap: "var(--space-8)", padding: "var(--space-12)" }}>
         <h2 style={{ fontSize: "var(--text-2xl)", margin: 0 }}>Qué puedes hacer aquí</h2>
 
-        <div className="grid2" style={{ alignItems: "stretch", gap: "var(--space-6)" }}>
-          <div className="card" style={{ padding: "var(--space-7)", height: "100%" }}>
-            <div style={{ display: "grid", gap: "var(--space-4)", height: "100%" }}>
+        <div className="grid2" style={{ alignItems: "stretch", gap: "var(--space-10)" }}>
+          <div className="card" style={{ padding: "var(--space-10)", height: "100%" }}>
+            <div style={{ display: "grid", gap: "var(--space-6)", height: "100%" }}>
               <div style={{ display: "grid", gap: "var(--space-2)" }}>
                 <h3 style={{ fontSize: "var(--text-xl)", margin: 0 }}>Generar una receta con lo que tienes</h3>
                 <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.7 }}>
@@ -93,8 +93,8 @@ function Home() {
             </div>
           </div>
 
-          <div className="card" style={{ padding: "var(--space-7)", height: "100%" }}>
-            <div style={{ display: "grid", gap: "var(--space-4)", height: "100%" }}>
+          <div className="card" style={{ padding: "var(--space-10)", height: "100%" }}>
+            <div style={{ display: "grid", gap: "var(--space-6)", height: "100%" }}>
               <div style={{ display: "grid", gap: "var(--space-2)" }}>
                 <h3 style={{ fontSize: "var(--text-xl)", margin: 0 }}>Consultar la Despensa</h3>
                 <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.7 }}>
@@ -114,8 +114,8 @@ function Home() {
       </section>
 
       {/* EDITORIAL / ÉTICA */}
-      <section className="card" style={{ padding: "var(--space-8)" }}>
-        <div className="grid2" style={{ alignItems: "stretch", gap: "var(--space-6)" }}>
+      <section className="card" style={{ padding: "var(--space-10)" }}>
+        <div className="grid2" style={{ alignItems: "stretch", gap: "var(--space-8)" }}>
           <div style={{ display: "grid", gap: "var(--space-4)" }}>
             <h2 style={{ fontSize: "var(--text-2xl)", margin: 0 }}>IA, pero con criterio</h2>
             <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.7 }}>
@@ -131,7 +131,7 @@ function Home() {
             </div>
           </div>
 
-          <div className="card" style={{ padding: "var(--space-7)", boxShadow: "none", height: "100%" }}>
+          <div className="card" style={{ padding: "var(--space-8)", boxShadow: "none", height: "100%" }}>
             <div style={{ display: "grid", gap: "var(--space-4)", height: "100%" }}>
               <div style={{ display: "grid", gap: "var(--space-2)" }}>
                 <h3 style={{ fontSize: "var(--text-xl)", margin: 0 }}>Qué verás en el asistente</h3>
