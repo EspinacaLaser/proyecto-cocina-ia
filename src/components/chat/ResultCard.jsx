@@ -1,3 +1,18 @@
+function normalizeArray(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) return value;
+  if (typeof value === "string") {
+    const t = value.trim();
+    return t ? [t] : [];
+  }
+  // fallback defensivo
+  try {
+    return [JSON.stringify(value)];
+  } catch {
+    return [];
+  }
+}
+
 function ResultCard({ result }) {
   if (!result) {
     return (
@@ -9,46 +24,67 @@ function ResultCard({ result }) {
     );
   }
 
+  const ingredients = Array.isArray(result.ingredients) ? result.ingredients : [];
+  const steps = Array.isArray(result.steps) ? result.steps : [];
+  const notes = normalizeArray(result.notes);
+  const warnings = normalizeArray(result.warnings);
+
   return (
     <article className="card" style={{ padding: "var(--space-8)" }}>
       <div style={{ display: "grid", gap: "var(--space-6)" }}>
-        <h3 style={{ margin: 0, fontSize: "var(--text-xl)" }}>{result.title}</h3>
+        <h3 style={{ margin: 0, fontSize: "var(--text-xl)" }}>
+          {result.title}
+        </h3>
 
         <section>
-          <strong style={{ display: "block", marginBottom: "var(--space-3)" }}>Ingredientes</strong>
+          <strong style={{ display: "block", marginBottom: "var(--space-3)" }}>
+            Ingredientes
+          </strong>
           <ul style={{ margin: 0, paddingLeft: "1.1rem", display: "grid", gap: "0.35rem", lineHeight: 1.6 }}>
-            {(result.ingredients || []).map((it, idx) => (
-              <li key={idx}>{typeof it === "string" ? it : it?.text ?? JSON.stringify(it)}</li>
+            {ingredients.map((it, idx) => (
+              <li key={idx}>
+                {typeof it === "string" ? it : it?.text ?? JSON.stringify(it)}
+              </li>
             ))}
           </ul>
         </section>
 
         <section>
-          <strong style={{ display: "block", marginBottom: "var(--space-3)" }}>Pasos</strong>
+          <strong style={{ display: "block", marginBottom: "var(--space-3)" }}>
+            Pasos
+          </strong>
           <ol style={{ margin: 0, paddingLeft: "1.1rem", display: "grid", gap: "0.5rem", lineHeight: 1.6 }}>
-            {(result.steps || []).map((s, idx) => (
+            {steps.map((s, idx) => (
               <li key={idx}>{s}</li>
             ))}
           </ol>
         </section>
 
-        {(result.notes && result.notes.length > 0) ? (
+        {notes.length > 0 && (
           <section>
-            <strong style={{ display: "block", marginBottom: "var(--space-3)" }}>Notas</strong>
+            <strong style={{ display: "block", marginBottom: "var(--space-3)" }}>
+              Notas
+            </strong>
             <ul style={{ margin: 0, paddingLeft: "1.1rem", display: "grid", gap: "0.35rem", lineHeight: 1.6 }}>
-              {result.notes.map((n, idx) => <li key={idx}>{n}</li>)}
+              {notes.map((n, idx) => (
+                <li key={idx}>{n}</li>
+              ))}
             </ul>
           </section>
-        ) : null}
+        )}
 
-        {(result.warnings && result.warnings.length > 0) ? (
+        {warnings.length > 0 && (
           <section>
-            <strong style={{ display: "block", marginBottom: "var(--space-3)" }}>Avisos</strong>
+            <strong style={{ display: "block", marginBottom: "var(--space-3)" }}>
+              Avisos
+            </strong>
             <ul style={{ margin: 0, paddingLeft: "1.1rem", display: "grid", gap: "0.35rem", lineHeight: 1.6 }}>
-              {result.warnings.map((w, idx) => <li key={idx}>{w}</li>)}
+              {warnings.map((w, idx) => (
+                <li key={idx}>{w}</li>
+              ))}
             </ul>
           </section>
-        ) : null}
+        )}
       </div>
     </article>
   );
