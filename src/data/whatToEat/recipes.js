@@ -1,27 +1,75 @@
+// src/data/whatToEat/recipes.js
+
+// === IMPORTS DE IMÁGENES (desde src/assets) ===
+
+// Carne
+import polloLimon from "../../assets/ia/what-to-eat/pollo-limon.jpg";
+import albondigasTomate from "../../assets/ia/what-to-eat/albondigas-tomate.jpg";
+
+// Pescado
+import salmonYogur from "../../assets/ia/what-to-eat/salmon-yogur.jpg";
+import merluzaHorno from "../../assets/ia/what-to-eat/merluza-horno.jpg";
+
+// Legumbres
+import lentejasVerduras from "../../assets/ia/what-to-eat/lentejas-verduras.jpg";
+import garbanzosEspinacas from "../../assets/ia/what-to-eat/garbanzos-espinacas.jpg";
+
+// Pasta
+import pastaAjoAceite from "../../assets/ia/what-to-eat/pasta-ajo-aceite.jpg";
+import penneChampinon from "../../assets/ia/what-to-eat/penne-champiñon.jpg";
+
+// Arroz
+import arrozSalteado from "../../assets/ia/what-to-eat/arroz-salteado.jpg";
+import arrozCaldosoTomate from "../../assets/ia/what-to-eat/arroz-caldoso-tomate.jpg";
+
+// Verduras
+import verdurasHorno from "../../assets/ia/what-to-eat/verduras-horno.jpg";
+import salteadoVerde from "../../assets/ia/what-to-eat/salteado-verde.jpg";
+
+// Repostería
+import bizcochoYogur from "../../assets/ia/what-to-eat/bizcocho-yogur.jpg";
+import vasosYogurFruta from "../../assets/ia/what-to-eat/vasos-yogur-fruta.jpg";
+
+// Sopas
+import cremaCalabaza from "../../assets/ia/what-to-eat/crema-calabaza.jpg";
+import sopaTomate from "../../assets/ia/what-to-eat/sopa-tomate.jpg";
+
+// Ensaladas
+import bowlMediterraneo from "../../assets/ia/what-to-eat/bowl-mediterraneo.jpg";
+import ensaladaArroz from "../../assets/ia/what-to-eat/ensalada-arroz.jpg";
+
+// Desayunos
+import tostadasTomate from "../../assets/ia/what-to-eat/tostadas-tomate.jpg";
+import avenaFruta from "../../assets/ia/what-to-eat/avena-fruta.jpg";
+
+// === RECETAS ===
+
 export const WTE_RECIPES = [
+  // =====================
   // CARNE
+  // =====================
   {
     id: "carne-1",
     categoryId: "carne",
     title: "Pollo al limón con verduras",
     timeMinutes: 25,
     difficulty: 2,
-    summary: "Pollo jugoso, toque cítrico y verdura salteada. Rápido y limpio.",
-    image: "/assets/ia/what-to-eat/pollo-limon.jpg",
+    summary: "Pollo jugoso con toque cítrico y verdura salteada.",
+    image: polloLimon,
     ingredients: [
-      "2 contramuslos o pechugas de pollo",
+      "2 pechugas de pollo",
       "1 calabacín",
       "1 zanahoria",
       "1 diente de ajo",
       "1 limón",
-      "Aceite de oliva, sal, pimienta",
+      "Aceite de oliva, sal y pimienta",
     ],
     steps: [
-      "Corta las verduras en tiras finas. Pica el ajo.",
-      "Dora el pollo a fuego medio-alto con aceite, sal y pimienta (6–8 min).",
-      "Retira el pollo y saltea verduras + ajo 5 min, dejando textura.",
-      "Vuelve a añadir el pollo, ralla limón y exprime un poco de zumo.",
-      "Cocina 3–5 min más hasta que el pollo esté hecho. Ajusta sal y pimienta.",
+      "Corta las verduras en tiras finas.",
+      "Dora el pollo salpimentado a fuego medio-alto.",
+      "Retira el pollo y saltea las verduras con el ajo.",
+      "Vuelve a añadir el pollo y ralla limón por encima.",
+      "Cocina unos minutos más y ajusta de sal.",
     ],
   },
   {
@@ -30,426 +78,408 @@ export const WTE_RECIPES = [
     title: "Albóndigas rápidas en salsa de tomate",
     timeMinutes: 30,
     difficulty: 3,
-    summary: "Clásico casero: salsa sencilla, albóndigas doradas y pan para mojar.",
-    image: "/assets/ia/what-to-eat/albondigas-tomate.jpg",
+    summary: "Clásico casero con salsa sencilla y sabrosa.",
+    image: albondigasTomate,
     ingredients: [
       "300 g carne picada",
-      "1 huevo (opcional)",
+      "1 huevo",
       "2 cdas pan rallado",
-      "1 diente de ajo",
       "400 g tomate triturado",
-      "Orégano, sal, pimienta, aceite",
+      "1 diente de ajo",
+      "Aceite, sal y pimienta",
     ],
     steps: [
-      "Mezcla carne, ajo picado, pan rallado, sal, pimienta (y huevo si quieres).",
-      "Forma bolitas pequeñas y dóralas en sartén con aceite.",
-      "Añade tomate triturado y orégano. Cocina 12–15 min a fuego suave.",
-      "Ajusta sal. Sirve con arroz, pasta o pan.",
+      "Mezcla la carne con huevo, ajo y pan rallado.",
+      "Forma albóndigas y dóralas.",
+      "Añade el tomate y cocina 15 minutos.",
+      "Rectifica de sal y sirve.",
     ],
   },
 
+  // =====================
   // PESCADO
+  // =====================
   {
     id: "pescado-1",
     categoryId: "pescado",
-    title: "Salmón a la plancha con yogur y eneldo",
+    title: "Salmón a la plancha con yogur",
     timeMinutes: 15,
     difficulty: 2,
-    summary: "Salmón dorado, salsa fresca y acompañamiento ligero.",
-    image: "/assets/ia/what-to-eat/salmon-yogur.jpg",
+    summary: "Salmón dorado con salsa fresca y ligera.",
+    image: salmonYogur,
     ingredients: [
       "2 lomos de salmón",
       "1 yogur natural",
+      "Limón",
       "Eneldo o perejil",
-      "1/2 limón",
-      "Sal, pimienta, aceite",
+      "Sal y pimienta",
     ],
     steps: [
-      "Seca el salmón y salpimenta.",
-      "Plancha muy caliente: 3–4 min por lado según grosor.",
-      "Mezcla yogur con limón, eneldo, sal y pimienta.",
-      "Sirve el salmón con la salsa por encima o al lado.",
+      "Salpimenta el salmón.",
+      "Cocínalo a la plancha 3–4 min por lado.",
+      "Mezcla yogur, limón y hierbas.",
+      "Sirve el salmón con la salsa.",
     ],
   },
   {
     id: "pescado-2",
     categoryId: "pescado",
-    title: "Merluza al horno con patata y pimentón",
+    title: "Merluza al horno con patata",
     timeMinutes: 35,
     difficulty: 2,
-    summary: "Horno sencillo: base de patata, pescado tierno y aceite con pimentón.",
-    image: "/assets/ia/what-to-eat/merluza-horno.jpg",
+    summary: "Pescado tierno sobre base de patata.",
+    image: merluzaHorno,
     ingredients: [
       "2 lomos de merluza",
       "2 patatas",
       "1/2 cebolla",
-      "Pimentón dulce",
-      "Aceite de oliva, sal",
+      "Aceite, sal y pimentón",
     ],
     steps: [
-      "Corta patata y cebolla finas. Hornéalas 20 min a 200ºC con aceite y sal.",
-      "Coloca la merluza encima y hornea 10–12 min más.",
-      "Templa aceite con pimentón (sin quemarlo) y riega al servir.",
+      "Hornea patatas y cebolla 20 min.",
+      "Añade la merluza y hornea 10 min más.",
+      "Riega con aceite y pimentón.",
     ],
   },
 
+  // =====================
   // LEGUMBRES
+  // =====================
   {
     id: "legumbres-1",
     categoryId: "legumbres",
-    title: "Lentejas rápidas con verduras",
+    title: "Lentejas con verduras",
     timeMinutes: 35,
     difficulty: 3,
-    summary: "Estofado corto y nutritivo: lentejas, zanahoria y especias suaves.",
-    image: "/assets/ia/what-to-eat/lentejas-verduras.jpg",
+    summary: "Estofado vegetal nutritivo y reconfortante.",
+    image: lentejasVerduras,
     ingredients: [
-      "200 g lentejas pardinas",
-      "1 zanahoria",
-      "1/2 cebolla",
-      "1 diente de ajo",
-      "1 hoja de laurel",
-      "Pimentón, aceite, sal",
+      "200 g lentejas",
+      "Zanahoria",
+      "Cebolla",
+      "Ajo",
+      "Laurel",
+      "Aceite y sal",
     ],
     steps: [
-      "Sofríe cebolla, ajo y zanahoria 6 min.",
-      "Añade pimentón, lentejas y laurel. Cubre con agua (3 dedos).",
-      "Cocina 25–30 min (según lenteja). Ajusta sal al final.",
+      "Sofríe las verduras.",
+      "Añade lentejas y agua.",
+      "Cocina 30 minutos.",
     ],
   },
   {
     id: "legumbres-2",
     categoryId: "legumbres",
-    title: "Garbanzos salteados con espinacas y comino",
+    title: "Garbanzos con espinacas",
     timeMinutes: 15,
     difficulty: 2,
-    summary: "Plan B perfecto: bote de garbanzos, espinacas y especias.",
-    image: "/assets/ia/what-to-eat/garbanzos-espinacas.jpg",
+    summary: "Salteado rápido con especias suaves.",
+    image: garbanzosEspinacas,
     ingredients: [
-      "1 bote de garbanzos cocidos",
-      "2 puñados de espinacas",
-      "1 diente de ajo",
-      "Comino, pimentón",
-      "Aceite, sal, limón (opcional)",
+      "Garbanzos cocidos",
+      "Espinacas",
+      "Ajo",
+      "Comino",
+      "Aceite y sal",
     ],
     steps: [
-      "Saltea ajo en aceite 30 s, añade comino y pimentón.",
-      "Añade garbanzos escurridos y saltea 4–5 min.",
-      "Incorpora espinacas hasta que se ablanden. Ajusta sal y un toque de limón.",
+      "Saltea el ajo.",
+      "Añade garbanzos y especias.",
+      "Incorpora espinacas y cocina 2 min.",
     ],
   },
 
+  // =====================
   // PASTA
+  // =====================
   {
     id: "pasta-1",
     categoryId: "pasta",
-    title: "Pasta ajo-aceite con tomate y albahaca",
+    title: "Pasta ajo y aceite",
     timeMinutes: 20,
     difficulty: 1,
-    summary: "Clásico minimalista: ajo dorado, tomate y hierbas.",
-    image: "/assets/ia/what-to-eat/pasta-ajo-aceite.jpg",
+    summary: "Minimalismo italiano con tomate fresco.",
+    image: pastaAjoAceite,
     ingredients: [
       "200 g pasta",
-      "2 dientes de ajo",
-      "2 cdas aceite de oliva",
-      "1 tomate grande (o cherry)",
-      "Albahaca o perejil",
+      "Ajo",
+      "Aceite de oliva",
+      "Tomate",
       "Sal",
     ],
     steps: [
-      "Cuece la pasta al dente y reserva un poco de agua.",
-      "Dora el ajo laminado en aceite a fuego bajo (sin quemar).",
-      "Añade tomate en dados, sal y saltea 2–3 min.",
-      "Incorpora pasta y un chorrito de agua de cocción para ligar.",
-      "Termina con albahaca.",
+      "Cuece la pasta.",
+      "Dora el ajo.",
+      "Añade tomate y mezcla con la pasta.",
     ],
   },
   {
     id: "pasta-2",
     categoryId: "pasta",
-    title: "Penne cremosos con champiñón",
+    title: "Penne con champiñones",
     timeMinutes: 25,
     difficulty: 2,
-    summary: "Cremosidad controlada: champiñón, ajo y un final con queso.",
-    image: "/assets/ia/what-to-eat/penne-champiñon.jpg",
+    summary: "Cremoso y reconfortante.",
+    image: penneChampinon,
     ingredients: [
-      "200 g penne",
-      "200 g champiñón",
-      "1 diente de ajo",
-      "Nata o queso crema (opcional)",
-      "Queso rallado",
-      "Aceite, sal, pimienta",
+      "Penne",
+      "Champiñones",
+      "Ajo",
+      "Nata o queso",
+      "Sal y pimienta",
     ],
     steps: [
-      "Cuece la pasta al dente.",
-      "Saltea champiñón a fuego alto para dorar, añade ajo.",
-      "Añade un toque de nata o queso crema (opcional) y un poco de agua de cocción.",
-      "Incorpora pasta, ajusta sal y pimienta, termina con queso.",
+      "Cuece la pasta.",
+      "Saltea champiñones y ajo.",
+      "Añade nata y mezcla con la pasta.",
     ],
   },
 
+  // =====================
   // ARROZ
+  // =====================
   {
     id: "arroz-1",
     categoryId: "arroz",
-    title: "Arroz salteado con huevo y verduras",
+    title: "Arroz salteado con huevo",
     timeMinutes: 20,
     difficulty: 2,
-    summary: "Receta de aprovechamiento: arroz del día anterior, huevo y verduras.",
-    image: "/assets/ia/what-to-eat/arroz-salteado.jpg",
+    summary: "Aprovechamiento rápido y sabroso.",
+    image: arrozSalteado,
     ingredients: [
-      "2 tazas arroz cocido",
-      "2 huevos",
-      "1/2 cebolla",
-      "1 zanahoria",
-      "Salsa de soja (opcional)",
-      "Aceite, sal",
+      "Arroz cocido",
+      "Huevo",
+      "Verduras",
+      "Aceite y sal",
     ],
     steps: [
-      "Saltea cebolla y zanahoria picadas 5–6 min.",
-      "Aparta a un lado, cuaja huevos removidos.",
-      "Añade arroz cocido, saltea 3–4 min. Ajusta con soja o sal.",
+      "Saltea verduras.",
+      "Añade huevo y remueve.",
+      "Incorpora arroz y saltea.",
     ],
   },
   {
     id: "arroz-2",
     categoryId: "arroz",
-    title: "Arroz caldoso de tomate y pimentón",
+    title: "Arroz caldoso de tomate",
     timeMinutes: 30,
     difficulty: 3,
-    summary: "Reconfortante y simple: tomate, caldo y un punto ahumado.",
-    image: "/assets/ia/what-to-eat/arroz-caldoso-tomate.jpg",
+    summary: "Reconfortante y aromático.",
+    image: arrozCaldosoTomate,
     ingredients: [
-      "1 taza arroz",
-      "400 g tomate triturado",
-      "Caldo (o agua)",
-      "Pimentón",
-      "1/2 cebolla",
-      "Aceite, sal",
+      "Arroz",
+      "Tomate triturado",
+      "Caldo",
+      "Aceite y sal",
     ],
     steps: [
-      "Sofríe cebolla, añade tomate y reduce 8–10 min.",
-      "Añade pimentón, arroz y remueve 1 min.",
-      "Cubre con caldo (más que un arroz seco) y cocina 15–18 min.",
-      "Ajusta sal. Reposa 2 min.",
+      "Sofríe tomate.",
+      "Añade arroz y caldo.",
+      "Cocina hasta punto caldoso.",
     ],
   },
 
+  // =====================
   // VERDURAS
+  // =====================
   {
     id: "verduras-1",
     categoryId: "verduras",
-    title: "Verduras al horno con especias y yogur",
+    title: "Verduras al horno",
     timeMinutes: 35,
     difficulty: 2,
-    summary: "Bandeja al horno: color, textura y salsa fresca.",
-    image: "/assets/ia/what-to-eat/verduras-horno.jpg",
+    summary: "Color y sabor con mínima intervención.",
+    image: verdurasHorno,
     ingredients: [
-      "1 calabacín",
-      "1 berenjena",
-      "1 pimiento",
-      "1 cebolla",
-      "Especias (comino/pimentón)",
-      "Yogur natural",
-      "Aceite, sal",
+      "Verduras variadas",
+      "Aceite",
+      "Especias",
+      "Sal",
     ],
     steps: [
-      "Corta verduras, mezcla con aceite, sal y especias.",
-      "Hornea 25–30 min a 200ºC hasta dorar.",
-      "Sirve con yogur por encima o al lado.",
+      "Mezcla verduras con aceite y especias.",
+      "Hornea 30 minutos.",
     ],
   },
   {
     id: "verduras-2",
     categoryId: "verduras",
-    title: "Salteado verde con ajo y limón",
+    title: "Salteado verde",
     timeMinutes: 15,
     difficulty: 1,
-    summary: "Brócoli/espinacas/judías con ajo: rápido y luminoso.",
-    image: "/assets/ia/what-to-eat/salteado-verde.jpg",
+    summary: "Ligero, rápido y fresco.",
+    image: salteadoVerde,
     ingredients: [
-      "Brócoli o judías verdes",
-      "1 diente de ajo",
-      "1/2 limón",
-      "Aceite, sal, pimienta",
+      "Verdura verde",
+      "Ajo",
+      "Aceite",
+      "Limón",
     ],
     steps: [
-      "Saltea ajo en aceite 30 s.",
-      "Añade verdura (si es brócoli, mejor escaldado 2 min).",
-      "Saltea 5–7 min y termina con limón, sal y pimienta.",
+      "Saltea ajo.",
+      "Añade verdura y cocina.",
+      "Termina con limón.",
     ],
   },
 
+  // =====================
   // REPOSTERÍA
+  // =====================
   {
     id: "reposteria-1",
     categoryId: "reposteria",
-    title: "Bizcocho rápido de yogur",
+    title: "Bizcocho de yogur",
     timeMinutes: 45,
     difficulty: 2,
-    summary: "Base clásica: esponjoso, aromático y fácil de recordar.",
-    image: "/assets/ia/what-to-eat/bizcocho-yogur.jpg",
+    summary: "Clásico esponjoso y fácil.",
+    image: bizcochoYogur,
     ingredients: [
-      "1 yogur natural",
-      "2 medidas de azúcar",
-      "3 medidas de harina",
-      "1 medida de aceite",
-      "3 huevos",
-      "1 sobre de levadura",
-      "Ralladura de limón (opcional)",
+      "Yogur",
+      "Harina",
+      "Azúcar",
+      "Huevos",
+      "Aceite",
     ],
     steps: [
-      "Mezcla huevos y azúcar. Añade yogur y aceite.",
-      "Incorpora harina y levadura. Mezcla sin sobrebatir.",
-      "Hornea 30–35 min a 180ºC (molde engrasado).",
-      "Deja templar antes de cortar.",
+      "Mezcla ingredientes.",
+      "Hornea 35 minutos.",
     ],
   },
   {
     id: "reposteria-2",
     categoryId: "reposteria",
-    title: "Vasos de yogur con fruta y crujiente",
+    title: "Vasos de yogur y fruta",
     timeMinutes: 10,
     difficulty: 1,
-    summary: "Postre express: capas, contraste y buen aspecto.",
-    image: "/assets/ia/what-to-eat/vasos-yogur-fruta.jpg",
+    summary: "Postre rápido y fresco.",
+    image: vasosYogurFruta,
     ingredients: [
-      "Yogur natural o griego",
-      "Fruta (plátano/fresas/manzana)",
-      "Frutos secos o granola",
-      "Miel (opcional)",
+      "Yogur",
+      "Fruta",
+      "Granola",
     ],
     steps: [
-      "Corta la fruta.",
-      "Monta capas en vaso: yogur, fruta, crujiente.",
-      "Termina con miel si quieres.",
+      "Monta capas en vaso.",
     ],
   },
 
+  // =====================
   // SOPAS
+  // =====================
   {
     id: "sopas-1",
     categoryId: "sopas",
-    title: "Crema de calabaza suave",
+    title: "Crema de calabaza",
     timeMinutes: 35,
     difficulty: 2,
-    summary: "Textura sedosa, dulce natural y especias suaves.",
-    image: "/assets/ia/what-to-eat/crema-calabaza.jpg",
+    summary: "Suave y reconfortante.",
+    image: cremaCalabaza,
     ingredients: [
-      "500 g calabaza",
-      "1/2 cebolla",
-      "1 patata pequeña",
-      "Caldo o agua",
-      "Aceite, sal, pimienta",
+      "Calabaza",
+      "Cebolla",
+      "Patata",
+      "Caldo",
     ],
     steps: [
-      "Sofríe cebolla 4–5 min.",
-      "Añade calabaza y patata, cubre con caldo.",
-      "Cocina 20–25 min y tritura. Ajusta sal y pimienta.",
+      "Cuece ingredientes.",
+      "Tritura y sirve.",
     ],
   },
   {
     id: "sopas-2",
     categoryId: "sopas",
-    title: "Sopa rápida de tomate",
+    title: "Sopa de tomate",
     timeMinutes: 20,
     difficulty: 1,
-    summary: "Tomate, ajo y pan: simple, intensa y reconfortante.",
-    image: "/assets/ia/what-to-eat/sopa-tomate.jpg",
+    summary: "Simple e intensa.",
+    image: sopaTomate,
     ingredients: [
-      "400 g tomate triturado",
-      "1 diente de ajo",
-      "Caldo o agua",
-      "Pan (opcional)",
-      "Aceite, sal",
+      "Tomate",
+      "Ajo",
+      "Caldo",
     ],
     steps: [
-      "Dora ajo en aceite 30 s.",
-      "Añade tomate y cocina 5 min.",
-      "Agrega caldo y hierve 8–10 min.",
-      "Opcional: añade pan y deja integrar 2 min.",
+      "Cuece todo y ajusta sal.",
     ],
   },
 
+  // =====================
   // ENSALADAS
+  // =====================
   {
     id: "ensaladas-1",
     categoryId: "ensaladas",
-    title: "Bowl mediterráneo con garbanzos",
+    title: "Bowl mediterráneo",
     timeMinutes: 15,
     difficulty: 1,
-    summary: "Fresco y completo: garbanzo, tomate, pepino y limón.",
-    image: "/assets/ia/what-to-eat/bowl-mediterraneo.jpg",
+    summary: "Fresco, completo y vegetal.",
+    image: bowlMediterraneo,
     ingredients: [
-      "1 bote garbanzos",
+      "Garbanzos",
       "Tomate",
       "Pepino",
-      "Aceite, limón, sal",
-      "Hierbas (opcional)",
+      "Aceite y limón",
     ],
     steps: [
-      "Escurre garbanzos.",
-      "Corta tomate y pepino.",
-      "Mezcla con aceite, limón, sal y hierbas.",
+      "Mezcla todos los ingredientes.",
     ],
   },
   {
     id: "ensaladas-2",
     categoryId: "ensaladas",
-    title: "Ensalada templada de arroz",
+    title: "Ensalada de arroz",
     timeMinutes: 20,
     difficulty: 2,
-    summary: "Arroz + verduras + aliño: ideal para tupper.",
-    image: "/assets/ia/what-to-eat/ensalada-arroz.jpg",
+    summary: "Ideal para tupper.",
+    image: ensaladaArroz,
     ingredients: [
-      "Arroz cocido",
-      "Verduras salteadas (pimiento/cebolla)",
-      "Aceite, vinagre o limón",
-      "Sal",
+      "Arroz",
+      "Verduras",
+      "Aliño",
     ],
     steps: [
-      "Saltea verduras 6–8 min.",
-      "Mezcla con arroz cocido.",
-      "Aliña y ajusta sal. Sirve templado.",
+      "Mezcla arroz y verduras.",
     ],
   },
 
+  // =====================
   // DESAYUNOS
+  // =====================
   {
     id: "desayunos-1",
     categoryId: "desayunos",
-    title: "Tostadas con tomate y aceite",
+    title: "Tostadas con tomate",
     timeMinutes: 8,
     difficulty: 0,
-    summary: "Simple, excelente y muy mediterráneo.",
-    image: "/assets/ia/what-to-eat/tostadas-tomate.jpg",
+    summary: "Mediterráneo puro.",
+    image: tostadasTomate,
     ingredients: [
       "Pan",
       "Tomate",
-      "Aceite de oliva",
+      "Aceite",
       "Sal",
     ],
     steps: [
       "Tuesta el pan.",
-      "Ralla tomate, ponlo encima, añade aceite y sal.",
+      "Añade tomate y aceite.",
     ],
   },
   {
     id: "desayunos-2",
     categoryId: "desayunos",
-    title: "Avena cremosa con fruta",
+    title: "Avena con fruta",
     timeMinutes: 12,
     difficulty: 1,
-    summary: "Base energética: avena, leche y fruta a elección.",
-    image: "/assets/ia/what-to-eat/avena-fruta.jpg",
+    summary: "Energía para empezar el día.",
+    image: avenaFruta,
     ingredients: [
-      "40–60 g avena",
-      "Leche o bebida vegetal",
+      "Avena",
+      "Leche",
       "Fruta",
-      "Canela (opcional)",
     ],
     steps: [
-      "Calienta leche, añade avena y cocina 6–8 min removiendo.",
-      "Sirve con fruta y canela.",
+      "Cuece la avena.",
+      "Añade fruta.",
     ],
   },
 ];

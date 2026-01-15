@@ -23,26 +23,27 @@ function RecipeModal({ recipe, onClose }) {
         onClick={(e) => e.stopPropagation()}
         style={{
           width: "min(900px, 100%)",
-          maxHeight: "85vh",
+          maxHeight: "90vh",
           overflow: "auto",
-          padding: "var(--space-8)",
+          padding: "clamp(var(--space-6), 5vw, var(--space-10))",
           display: "grid",
-          gap: "var(--space-6)",
+          gap: "var(--space-7)",
+          borderRadius: "var(--radius-lg)",
         }}
       >
-        <header style={{ display: "grid", gap: "var(--space-2)" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", gap: "var(--space-4)", flexWrap: "wrap" }}>
-            <h2 style={{ margin: 0, fontSize: "var(--text-2xl)" }}>{recipe.title}</h2>
+        <header style={{ display: "grid", gap: "var(--space-4)" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", gap: "var(--space-4)", flexWrap: "wrap", alignItems: "flex-start" }}>
+            <h2 style={{ margin: 0, fontSize: "clamp(var(--text-xl), 6vw, var(--text-2xl))", lineHeight: 1.2, flex: 1, minWidth: "200px" }}>{recipe.title}</h2>
             <button className="btn btnGhost" type="button" onClick={onClose}>
               Cerrar
             </button>
           </div>
 
           <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap", alignItems: "center" }}>
-            <span className="badge">{recipe.timeMinutes} min</span>
-            <span className="badge">
-              <Stars value={recipe.difficulty} />{" "}
-              <span style={{ marginLeft: 6 }}>dificultad</span>
+            <span className="badge" style={{ padding: "0.5rem 1rem", fontSize: "var(--text-sm)" }}>{recipe.timeMinutes} min</span>
+            <span className="badge" style={{ padding: "0.5rem 1rem", fontSize: "var(--text-sm)", display: "flex", gap: "var(--space-2)", alignItems: "center" }}>
+              <Stars value={recipe.difficulty} />
+              <span>dificultad</span>
             </span>
           </div>
         </header>
@@ -52,20 +53,20 @@ function RecipeModal({ recipe, onClose }) {
           <img
             src={recipe.image}
             alt={recipe.title}
-            style={{ width: "100%", height: 280, objectFit: "cover", display: "block" }}
+            style={{ width: "100%", height: "clamp(200px, 40vw, 350px)", objectFit: "cover", display: "block" }}
             onError={(e) => {
               e.currentTarget.style.display = "none";
             }}
           />
-          <div style={{ padding: "var(--space-5)" }}>
-            <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.6 }}>{recipe.summary}</p>
+          <div style={{ padding: "var(--space-6)" }}>
+            <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.7, fontSize: "var(--text-base)" }}>{recipe.summary}</p>
           </div>
         </div>
 
         {/* Ingredientes */}
-        <section style={{ display: "grid", gap: "var(--space-2)" }}>
-          <h3 style={{ margin: 0, fontSize: "var(--text-xl)" }}>Ingredientes</h3>
-          <ul style={{ margin: 0, paddingLeft: "1.2rem", display: "grid", gap: "0.35rem", lineHeight: 1.6 }}>
+        <section style={{ display: "grid", gap: "var(--space-4)" }}>
+          <h3 style={{ margin: 0, fontSize: "clamp(var(--text-lg), 4vw, var(--text-xl))", fontWeight: 600, letterSpacing: "0.01em" }}>Ingredientes</h3>
+          <ul style={{ margin: 0, paddingLeft: "1.5rem", display: "grid", gap: "var(--space-3)", lineHeight: 1.8, fontSize: "var(--text-base)" }}>
             {(recipe.ingredients || []).map((it, idx) => (
               <li key={idx}>{it}</li>
             ))}
@@ -73,11 +74,11 @@ function RecipeModal({ recipe, onClose }) {
         </section>
 
         {/* Pasos */}
-        <section style={{ display: "grid", gap: "var(--space-2)" }}>
-          <h3 style={{ margin: 0, fontSize: "var(--text-xl)" }}>Preparación</h3>
-          <ol style={{ margin: 0, paddingLeft: "1.2rem", display: "grid", gap: "0.5rem", lineHeight: 1.6 }}>
+        <section style={{ display: "grid", gap: "var(--space-4)" }}>
+          <h3 style={{ margin: 0, fontSize: "clamp(var(--text-lg), 4vw, var(--text-xl))", fontWeight: 600, letterSpacing: "0.01em" }}>Preparación</h3>
+          <ol style={{ margin: 0, paddingLeft: "1.5rem", display: "grid", gap: "var(--space-4)", lineHeight: 1.8, fontSize: "var(--text-base)" }}>
             {(recipe.steps || []).map((s, idx) => (
-              <li key={idx}>{s}</li>
+              <li key={idx} style={{ marginBottom: "var(--space-2)" }}>{s}</li>
             ))}
           </ol>
         </section>
