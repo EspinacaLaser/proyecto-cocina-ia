@@ -57,6 +57,9 @@ function SiteHeader() {
             <NavLink to="/despensa" style={linkStyle}>
               Despensa
             </NavLink>
+            <NavLink to="/que-comer" style={linkStyle}>
+              ¿Qué comer?
+            </NavLink>
           </nav>
         </div>
       </div>
