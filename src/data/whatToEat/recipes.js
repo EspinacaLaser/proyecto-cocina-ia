@@ -56,7 +56,7 @@ export const WTE_RECIPES = [
     timeMinutes: 15,
     difficulty: 2,
     summary: "Salmón dorado, salsa fresca y acompañamiento ligero.",
-    image: "assets/ia/what-to-eat/salmon-yogur.jpg",
+    image: "/assets/ia/what-to-eat/salmon-yogur.jpg",
     ingredients: [
       "2 lomos de salmón",
       "1 yogur natural",
