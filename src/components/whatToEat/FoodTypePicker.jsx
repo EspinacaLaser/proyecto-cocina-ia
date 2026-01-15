@@ -2,10 +2,10 @@ import { FOOD_CATEGORIES } from "../../data/whatToEat/categories";
 
 function FoodTypePicker({ value, onChange }) {
   return (
-    <div style={{ display: "grid", gap: "var(--space-5)" }}>
-      <strong style={{ fontSize: "var(--text-base)", fontWeight: 600, letterSpacing: "0.02em" }}>¿Qué te apetece comer?</strong>
+    <div style={{ display: "grid", gap: "24px" }}>
+      <strong style={{ fontSize: "18px", fontWeight: 700, letterSpacing: "0.02em", marginBottom: "8px" }}>¿Qué te apetece comer?</strong>
 
-      <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap", rowGap: "var(--space-3)" }}>
+      <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", rowGap: "16px" }}>
         {FOOD_CATEGORIES.map((c) => {
           const active = value === c.id;
           return (
@@ -14,7 +14,7 @@ function FoodTypePicker({ value, onChange }) {
               type="button"
               onClick={() => onChange(c.id)}
               className={active ? "btn btnPrimary" : "btn btnGhost"}
-              style={{ padding: "0.75rem 1.25rem", fontSize: "var(--text-sm)" }}
+              style={{ padding: "12px 20px", fontSize: "14px" }}
               title={c.hint}
             >
               {c.label}
@@ -23,7 +23,7 @@ function FoodTypePicker({ value, onChange }) {
         })}
       </div>
 
-      <p style={{ margin: 0, marginTop: "var(--space-2)", color: "var(--muted)", fontSize: "var(--text-xs)", lineHeight: 1.5 }}>
+      <p style={{ margin: 0, marginTop: "16px", color: "var(--muted)", fontSize: "12px", lineHeight: 1.6 }}>
         Consejo: esta sección es guiada (no es un chatbot libre). El objetivo es mantener coherencia y evitar resultados genéricos.
       </p>
     </div>

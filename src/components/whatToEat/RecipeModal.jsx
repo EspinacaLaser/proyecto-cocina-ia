@@ -11,10 +11,10 @@ function RecipeModal({ recipe, onClose }) {
       style={{
         position: "fixed",
         inset: 0,
-        background: "rgba(0,0,0,0.45)",
+        background: "rgba(0,0,0,0.5)",
         display: "grid",
         placeItems: "center",
-        padding: "var(--space-6)",
+        padding: "20px",
         zIndex: 50,
       }}
     >
@@ -25,23 +25,23 @@ function RecipeModal({ recipe, onClose }) {
           width: "min(900px, 100%)",
           maxHeight: "90vh",
           overflow: "auto",
-          padding: "clamp(var(--space-6), 5vw, var(--space-10))",
+          padding: "40px",
           display: "grid",
-          gap: "var(--space-7)",
+          gap: "32px",
           borderRadius: "var(--radius-lg)",
         }}
       >
-        <header style={{ display: "grid", gap: "var(--space-4)" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", gap: "var(--space-4)", flexWrap: "wrap", alignItems: "flex-start" }}>
-            <h2 style={{ margin: 0, fontSize: "clamp(var(--text-xl), 6vw, var(--text-2xl))", lineHeight: 1.2, flex: 1, minWidth: "200px" }}>{recipe.title}</h2>
+        <header style={{ display: "grid", gap: "20px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", gap: "20px", flexWrap: "wrap", alignItems: "flex-start" }}>
+            <h2 style={{ margin: "0 0 8px 0", fontSize: "28px", lineHeight: 1.2, flex: 1, minWidth: "200px" }}>{recipe.title}</h2>
             <button className="btn btnGhost" type="button" onClick={onClose}>
               Cerrar
             </button>
           </div>
 
-          <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap", alignItems: "center" }}>
-            <span className="badge" style={{ padding: "0.5rem 1rem", fontSize: "var(--text-sm)" }}>{recipe.timeMinutes} min</span>
-            <span className="badge" style={{ padding: "0.5rem 1rem", fontSize: "var(--text-sm)", display: "flex", gap: "var(--space-2)", alignItems: "center" }}>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }}>
+            <span className="badge" style={{ padding: "8px 16px", fontSize: "14px" }}>{recipe.timeMinutes} min</span>
+            <span className="badge" style={{ padding: "8px 16px", fontSize: "14px", display: "flex", gap: "8px", alignItems: "center" }}>
               <Stars value={recipe.difficulty} />
               <span>dificultad</span>
             </span>
@@ -53,20 +53,20 @@ function RecipeModal({ recipe, onClose }) {
           <img
             src={recipe.image}
             alt={recipe.title}
-            style={{ width: "100%", height: "clamp(200px, 40vw, 350px)", objectFit: "cover", display: "block" }}
+            style={{ width: "100%", height: "280px", objectFit: "cover", display: "block" }}
             onError={(e) => {
               e.currentTarget.style.display = "none";
             }}
           />
-          <div style={{ padding: "var(--space-6)" }}>
-            <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.7, fontSize: "var(--text-base)" }}>{recipe.summary}</p>
+          <div style={{ padding: "28px" }}>
+            <p style={{ margin: 0, color: "var(--muted)", lineHeight: 1.8, fontSize: "16px" }}>{recipe.summary}</p>
           </div>
         </div>
 
         {/* Ingredientes */}
-        <section style={{ display: "grid", gap: "var(--space-4)" }}>
-          <h3 style={{ margin: 0, fontSize: "clamp(var(--text-lg), 4vw, var(--text-xl))", fontWeight: 600, letterSpacing: "0.01em" }}>Ingredientes</h3>
-          <ul style={{ margin: 0, paddingLeft: "1.5rem", display: "grid", gap: "var(--space-3)", lineHeight: 1.8, fontSize: "var(--text-base)" }}>
+        <section style={{ display: "grid", gap: "20px" }}>
+          <h3 style={{ margin: "8px 0 12px 0", fontSize: "20px", fontWeight: 600, letterSpacing: "0.01em" }}>Ingredientes</h3>
+          <ul style={{ margin: 0, paddingLeft: "24px", display: "grid", gap: "16px", lineHeight: 1.9, fontSize: "16px" }}>
             {(recipe.ingredients || []).map((it, idx) => (
               <li key={idx}>{it}</li>
             ))}
@@ -74,11 +74,11 @@ function RecipeModal({ recipe, onClose }) {
         </section>
 
         {/* Pasos */}
-        <section style={{ display: "grid", gap: "var(--space-4)" }}>
-          <h3 style={{ margin: 0, fontSize: "clamp(var(--text-lg), 4vw, var(--text-xl))", fontWeight: 600, letterSpacing: "0.01em" }}>Preparación</h3>
-          <ol style={{ margin: 0, paddingLeft: "1.5rem", display: "grid", gap: "var(--space-4)", lineHeight: 1.8, fontSize: "var(--text-base)" }}>
+        <section style={{ display: "grid", gap: "20px" }}>
+          <h3 style={{ margin: "8px 0 12px 0", fontSize: "20px", fontWeight: 600, letterSpacing: "0.01em" }}>Preparación</h3>
+          <ol style={{ margin: 0, paddingLeft: "24px", display: "grid", gap: "20px", lineHeight: 1.9, fontSize: "16px" }}>
             {(recipe.steps || []).map((s, idx) => (
-              <li key={idx} style={{ marginBottom: "var(--space-2)" }}>{s}</li>
+              <li key={idx} style={{ marginBottom: "8px" }}>{s}</li>
             ))}
           </ol>
         </section>

@@ -10,13 +10,13 @@ function Bubble({ role, children }) {
       style={{
         display: "flex",
         justifyContent: isUser ? "flex-end" : "flex-start",
-        padding: "0 var(--space-2)",
+        padding: "0 8px",
       }}
     >
       <div
         className="card"
         style={{
-          padding: "var(--space-5)",
+          padding: "20px",
           maxWidth: "min(70ch, 90%)",
           background: isUser
             ? "rgba(255,255,255,0.95)"
@@ -25,7 +25,7 @@ function Bubble({ role, children }) {
           borderRadius: "var(--radius-md)",
         }}
       >
-        <p style={{ margin: 0, lineHeight: 1.7, fontSize: "var(--text-base)" }}>{children}</p>
+        <p style={{ margin: 0, lineHeight: 1.8, fontSize: "16px" }}>{children}</p>
       </div>
     </div>
   );
@@ -41,17 +41,17 @@ function WhatToEatChat({
     <div
       className="card"
       style={{
-        padding: "clamp(var(--space-5), 5vw, var(--space-8))",
+        padding: "32px",
         display: "grid",
-        gap: "var(--space-8)",
+        gap: "32px",
       }}
     >
-      <h2 style={{ fontSize: "clamp(var(--text-lg), 5vw, var(--text-2xl))", margin: 0, fontWeight: 600 }}>
+      <h2 style={{ fontSize: "24px", margin: 0, fontWeight: 600 }}>
         Conversación
       </h2>
 
       {/* Mensajes */}
-      <div style={{ display: "grid", gap: "var(--space-5)", minHeight: "200px" }}>
+      <div style={{ display: "grid", gap: "24px", minHeight: "200px" }}>
         {messages.map((m, idx) => (
           <Bubble key={idx} role={m.role}>
             {m.text}
@@ -60,7 +60,7 @@ function WhatToEatChat({
       </div>
 
       {/* Selector guiado */}
-      <div style={{ display: "grid", gap: "var(--space-6)", borderTop: "1px solid var(--border)", paddingTop: "var(--space-6)" }}>
+      <div style={{ display: "grid", gap: "28px", borderTop: "1px solid var(--border)", paddingTop: "28px" }}>
         <FoodTypePicker
           value={categoryId}
           onChange={onSelectCategory}
@@ -69,7 +69,7 @@ function WhatToEatChat({
         <div
           style={{
             display: "flex",
-            gap: "var(--space-4)",
+            gap: "16px",
             flexWrap: "wrap",
             justifyContent: "flex-start",
           }}
