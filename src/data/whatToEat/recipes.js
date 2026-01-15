@@ -170,7 +170,7 @@ export const WTE_RECIPES = [
     timeMinutes: 25,
     difficulty: 2,
     summary: "Cremosidad controlada: champiñón, ajo y un final con queso.",
-    image: "/assets/ia/what-to-eat/penne-champinon.jpg",
+    image: "/assets/ia/what-to-eat/penne-champiñon.jpg",
     ingredients: [
       "200 g penne",
       "200 g champiñón",
