@@ -33,7 +33,7 @@ function SiteHeader() {
               whiteSpace: "nowrap",
             }}
           >
-            Cocina IA
+            Mise In Place
           </Link>
 
           <nav
